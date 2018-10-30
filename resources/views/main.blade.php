@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+    @include('materials.header')
+
+	@yield('outerInclude')
+	
+	<style>
+		#ContentOfBody{
+        	min-height: 100vh;
+		  }
+		  
+		#ContentOfooter{
+			bottom: 0;
+			left: 0;
+			position: relative;
+			right: 0;
+			top: 5em;  
+		}
+	</style>
     
+</head>
+
+
+<body>
+    @include('materials.navigation')
+	
+    <div id="ContentOfBody" class="container-fluid">
+		@yield('ContentOfBody')
+	</div>
+
+	<div id="ContentOfooter">
+		@include('materials.footer')
+	</div>
 </body>
 </html>
